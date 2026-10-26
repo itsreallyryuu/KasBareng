@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Identitas -->
+    <color name="brand_navy">#1D3A52</color>
+    <color name="on_brand">#F0F4F6</color>
+    <color name="accent_text">#A8D5E5</color>
+
+    <!-- Aksi utama (emerald) -->
+    <color name="primary">#35C995</color>
+    <color name="on_primary">#06241A</color>
+
+    <!-- Tonal / indikator navigasi / chip terpilih -->
+    <color name="primary_container">#1F3B50</color>
+    <color name="on_primary_container">#A8D5E5</color>
+
+    <!-- Latar dan permukaan -->
+    <color name="bg">#101820</color>
+    <color name="surface">#192630</color>
+    <color name="surface_high">#223441</color>
+    <color name="card_stroke">#2C3B46</color>
+    <color name="outline">#6E808B</color>
+
+    <!-- Teks -->
+    <color name="text_primary">#F0F4F6</color>
+    <color name="text_secondary">#A1AFB8</color>
+
+    <!-- Status -->
+    <color name="status_lunas">#35C995</color>
+    <color name="status_nunggak">#FF8A80</color>
+    <color name="status_netral">#A1AFB8</color>
+    <color name="status_cicilan">#F2B84B</color>
+    <color name="status_nonaktif">#8A98A1</color>
+</resources>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/nav_home" android:icon="@drawable/ic_home" android:title="Beranda"/>
+    <item android:id="@+id/nav_members" android:icon="@drawable/ic_people" android:title="Anggota"/>
+    <item android:id="@+id/nav_transactions" android:icon="@drawable/ic_receipt" android:title="Transaksi"/>
+    <item android:id="@+id/nav_reports" android:icon="@drawable/ic_chart" android:title="Laporan"/>
+    <item android:id="@+id/nav_settings" android:icon="@drawable/ic_settings" android:title="Setelan"/>
+</menu>

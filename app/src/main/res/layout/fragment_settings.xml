@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="vertical" android:padding="20dp">
+
+        <TextView
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Setelan" android:textColor="@color/accent_text"
+            android:textSize="22sp" android:textStyle="bold"/>
+
+        <!-- JADWAL KAS -->
+        <TextView style="@style/Section" android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:layout_marginTop="20dp"
+            android:text="JADWAL KAS"/>
+        <com.google.android.material.card.MaterialCardView
+            style="@style/Widget.Material3.CardView.Outlined"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:cardBackgroundColor="@color/surface" app:cardCornerRadius="16dp"
+            app:strokeColor="@color/card_stroke" app:strokeWidth="1dp">
+            <LinearLayout
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:padding="16dp">
+                <TextView android:id="@+id/st_schedule"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:lineSpacingExtra="3dp" android:textColor="@color/text_primary"
+                    android:textSize="15sp"/>
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_edit_schedule"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"/>
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_schedule_history"
+                    style="@style/Widget.Material3.Button.TextButton"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:text="Riwayat jadwal kas"/>
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_cancel_pending"
+                    style="@style/Widget.Material3.Button.TextButton"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:text="Batalkan jadwal baru" android:textColor="@color/status_nunggak"
+                    android:visibility="gone"/>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- PINDAH DARI BUKU KAS -->
+        <TextView style="@style/Section" android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:layout_marginTop="24dp"
+            android:text="PINDAH DARI BUKU KAS"/>
+        <com.google.android.material.card.MaterialCardView
+            style="@style/Widget.Material3.CardView.Outlined"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:cardBackgroundColor="@color/surface" app:cardCornerRadius="16dp"
+            app:strokeColor="@color/card_stroke" app:strokeWidth="1dp">
+            <LinearLayout
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:padding="16dp">
+                <TextView style="@style/Label" android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Memindahkan catatan dari buku tulis? Catat saldo kas dan tunggakan tiap anggota sebagai titik awal."/>
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_open_balance"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp" android:minHeight="52dp"
+                    android:text="Catat saldo awal kas"/>
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_open_arrears"
+                    style="@style/Widget.Material3.Button.TonalButton"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp" android:minHeight="52dp"
+                    android:text="Catat tunggakan awal anggota"/>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- PEMBAYARAN QRIS -->
+        <TextView style="@style/Section" android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:layout_marginTop="24dp"
+            android:text="PEMBAYARAN QRIS"/>
+        <com.google.android.material.card.MaterialCardView
+            style="@style/Widget.Material3.CardView.Outlined"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:cardBackgroundColor="@color/surface" app:cardCornerRadius="16dp"
+            app:strokeColor="@color/card_stroke" app:strokeWidth="1dp">
+            <LinearLayout
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:padding="16dp">
+                <TextView style="@style/Label" android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Unggah gambar QRIS milik kelas atau bendahara. Anggota bisa membayar dengan scan QRIS ini saat kamu mencatat pembayaran. Gambar hanya tersimpan di HP ini dan tidak ikut cadangan data."/>
+                <ImageView
+                    android:id="@+id/qris_preview"
+                    android:layout_width="140dp" android:layout_height="140dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@android:color/white"
+                    android:contentDescription="Pratinjau QRIS"
+                    android:padding="8dp" android:scaleType="fitCenter"
+                    android:visibility="gone"/>
+                <TextView android:id="@+id/qris_status"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp" android:textColor="@color/text_primary"
+                    android:textSize="15sp"/>
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_qris_upload"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp" android:text="Unggah QRIS"/>
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_qris_view"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp" android:text="Lihat QRIS"
+                    android:visibility="gone"/>
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_qris_delete"
+                    style="@style/Widget.Material3.Button.TextButton"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:text="Hapus QRIS" android:textColor="@color/status_nunggak"
+                    android:visibility="gone"/>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- TAMPILAN -->
+        <TextView style="@style/Section" android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:layout_marginTop="24dp"
+            android:text="TAMPILAN"/>
+        <com.google.android.material.card.MaterialCardView
+            style="@style/Widget.Material3.CardView.Outlined"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:cardBackgroundColor="@color/surface" app:cardCornerRadius="16dp"
+            app:strokeColor="@color/card_stroke" app:strokeWidth="1dp">
+            <LinearLayout
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:padding="16dp">
+                <TextView style="@style/Label" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:text="Tema aplikasi"/>
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/theme_group"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    app:selectionRequired="true" app:singleSelection="true">
+                    <com.google.android.material.chip.Chip android:id="@+id/th_system" style="@style/Widget.Material3.Chip.Filter" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Ikuti sistem"/>
+                    <com.google.android.material.chip.Chip android:id="@+id/th_light" style="@style/Widget.Material3.Chip.Filter" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Terang"/>
+                    <com.google.android.material.chip.Chip android:id="@+id/th_dark" style="@style/Widget.Material3.Chip.Filter" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Gelap"/>
+                </com.google.android.material.chip.ChipGroup>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- DATA -->
+        <TextView style="@style/Section" android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:layout_marginTop="24dp"
+            android:text="DATA"/>
+        <com.google.android.material.card.MaterialCardView
+            style="@style/Widget.Material3.CardView.Outlined"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:cardBackgroundColor="@color/surface" app:cardCornerRadius="16dp"
+            app:strokeColor="@color/card_stroke" app:strokeWidth="1dp">
+            <LinearLayout
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:padding="16dp">
+                <TextView style="@style/Label" android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Data kas hanya tersimpan di HP ini. Cadangkan rutin dan simpan filenya di tempat aman, misalnya Google Drive."/>
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_backup"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp" android:text="Cadangkan data"/>
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_restore"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp" android:text="Pulihkan data"/>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- DUKUNGAN -->
+        <TextView style="@style/Section" android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:layout_marginTop="24dp"
+            android:text="DUKUNGAN"/>
+        <com.google.android.material.card.MaterialCardView
+            style="@style/Widget.Material3.CardView.Outlined"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:cardBackgroundColor="@color/surface" app:cardCornerRadius="16dp"
+            app:strokeColor="@color/card_stroke" app:strokeWidth="1dp">
+            <LinearLayout
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:padding="16dp">
+                <TextView style="@style/Label" android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="KasBareng gratis dan tanpa iklan. Dukunganmu membantu pengembangan berlanjut."/>
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_donate"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp" android:minHeight="52dp"
+                    android:text="Dukung developer via Saweria"/>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- BANTUAN -->
+        <TextView style="@style/Section" android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:layout_marginTop="24dp"
+            android:text="BANTUAN"/>
+        <com.google.android.material.card.MaterialCardView
+            style="@style/Widget.Material3.CardView.Outlined"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:cardBackgroundColor="@color/surface" app:cardCornerRadius="16dp"
+            app:strokeColor="@color/card_stroke" app:strokeWidth="1dp">
+            <LinearLayout
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:padding="16dp">
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_tutorial"
+                    style="@style/Widget.Material3.Button.TonalButton"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:text="Cara memakai KasBareng"/>
+                <TextView style="@style/Label" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:layout_marginTop="12dp"
+                    android:text="KasBareng v1.0"/>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,60 @@
+version = 2
+
+[module]
+type = "android-app"
+name = "app"
+languageLevel = "JAVA_8"
+output = "build/classes"
+
+[sourceSets.androidTest]
+scope = "TEST_IMPLEMENTATION"
+java = ["src/androidTest/java", "src/androidTest/kotlin"]
+resources = ["src/androidTest/resources"]
+
+[sourceSets.debug]
+scope = "IMPLEMENTATION"
+aidl = ["src/debug/aidl"]
+assets = ["src/debug/assets"]
+java = ["src/debug/java", "src/debug/kotlin"]
+jniLibs = ["src/debug/jniLibs"]
+res = ["src/debug/res"]
+resources = ["src/debug/resources"]
+
+[sourceSets.main]
+scope = "IMPLEMENTATION"
+aidl = ["src/main/aidl"]
+assets = ["src/main/assets"]
+java = ["src/main/java", "src/main/kotlin"]
+jniLibs = ["src/main/jniLibs"]
+res = ["src/main/res"]
+resources = ["src/main/resources"]
+
+[sourceSets.release]
+scope = "IMPLEMENTATION"
+aidl = ["src/release/aidl"]
+assets = ["src/release/assets"]
+java = ["src/release/java", "src/release/kotlin"]
+jniLibs = ["src/release/jniLibs"]
+res = ["src/release/res"]
+resources = ["src/release/resources"]
+
+[sourceSets.test]
+scope = "TEST_IMPLEMENTATION"
+java = ["src/test/java", "src/test/kotlin"]
+resources = ["src/test/resources"]
+
+[dependencies]
+implementation = ["kotlin-stdlib", "androidx.core:core-ktx:1.19.1", "androidx.appcompat:appcompat:1.8.0", "com.google.android.material:material:1.14.0", "androidx.recyclerview:recyclerview:1.4.0", "androidx.fragment:fragment-ktx:1.9.1", "androidx.lifecycle:lifecycle-viewmodel-ktx:2.11.0", "androidx.room:room-runtime:2.8.5", "androidx.room:room-ktx:2.8.5", "androidx.lifecycle:lifecycle-runtime-ktx:2.11.0"]
+
+[android]
+namespace = "com.app.kasbareng"
+compileSdk = 36
+minSdk = 26
+targetSdk = 34
+manifest = "src/main/AndroidManifest.xml"
+versionCode = 1
+versionName = "1.0"
+isApplication = true
+manifestPlaceholders = []
+buildConfigFields = []
+buildTypes = [{ name = "debug", debuggable = true, minifyEnabled = false, shrinkResources = false }, { name = "release", debuggable = false, minifyEnabled = false, shrinkResources = false, proguardFiles = ["proguard-android-optimize.txt", "proguard-rules.pro"] }]

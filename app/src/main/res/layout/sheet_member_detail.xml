@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="vertical" android:padding="20dp" android:paddingTop="24dp">
+
+        <TextView android:id="@+id/md_name"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:textColor="@color/accent_text" android:textSize="22sp" android:textStyle="bold"/>
+
+        <TextView android:id="@+id/md_badge"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:paddingStart="10dp" android:paddingEnd="10dp"
+            android:paddingTop="4dp" android:paddingBottom="4dp"
+            android:textSize="12sp" android:textStyle="bold"/>
+
+        <TextView android:id="@+id/md_note" style="@style/Label"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="8dp" android:visibility="gone"/>
+
+        <com.google.android.material.card.MaterialCardView
+            style="@style/Widget.Material3.CardView.Outlined"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:cardBackgroundColor="@color/surface" app:cardCornerRadius="16dp"
+            app:strokeColor="@color/card_stroke" app:strokeWidth="1dp">
+            <TextView android:id="@+id/md_info"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:lineSpacingExtra="6dp" android:padding="16dp"
+                android:textColor="@color/text_primary" android:textSize="15sp"/>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_hist"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="20dp" android:minHeight="52dp"
+            android:text="Lihat riwayat pembayaran"/>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_opening"
+            style="@style/Widget.Material3.Button.TonalButton"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="8dp" android:minHeight="52dp"
+            android:text="Tunggakan awal dari buku"/>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_edit"
+            style="@style/Widget.Material3.Button.TonalButton"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="8dp" android:minHeight="52dp"
+            android:text="Edit data"/>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_toggle"
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="8dp" android:minHeight="52dp"/>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_delete"
+            style="@style/Widget.Material3.Button.TextButton"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="4dp" android:minHeight="48dp"
+            android:text="Hapus anggota" android:textColor="@color/status_nunggak"/>
+    </LinearLayout>
+</ScrollView>

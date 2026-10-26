@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:fillViewport="true">
+    <LinearLayout
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="vertical" android:padding="20dp">
+
+        <TextView
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Laporan" android:textColor="@color/accent_text"
+            android:textSize="22sp" android:textStyle="bold"/>
+
+        <TextView style="@style/Label" android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:layout_marginTop="12dp"
+            android:text="Saldo kas saat ini"/>
+        <TextView android:id="@+id/rp_balance" style="@style/Amount"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Rp0" android:textSize="30sp"/>
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/period_group"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            app:selectionRequired="true" app:singleSelection="true">
+            <com.google.android.material.chip.Chip android:id="@+id/p_week" style="@style/Widget.Material3.Chip.Filter" android:layout_width="wrap_content" android:layout_height="wrap_content" android:checked="true" android:text="Minggu ini"/>
+            <com.google.android.material.chip.Chip android:id="@+id/p_month" style="@style/Widget.Material3.Chip.Filter" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Bulan ini"/>
+            <com.google.android.material.chip.Chip android:id="@+id/p_all" style="@style/Widget.Material3.Chip.Filter" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Semua"/>
+        </com.google.android.material.chip.ChipGroup>
+
+        <LinearLayout
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="8dp" android:orientation="horizontal">
+            <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:orientation="vertical">
+                <TextView style="@style/Label" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:text="Pemasukan"/>
+                <TextView android:id="@+id/rp_income" style="@style/Amount"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Rp0" android:textColor="@color/status_lunas" android:textSize="18sp"/>
+            </LinearLayout>
+            <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:orientation="vertical">
+                <TextView style="@style/Label" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:text="Pengeluaran"/>
+                <TextView android:id="@+id/rp_expense" style="@style/Amount"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Rp0" android:textColor="@color/status_nunggak" android:textSize="18sp"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Arus kas -->
+        <TextView style="@style/Section" android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:layout_marginTop="24dp"
+            android:text="ARUS KAS"/>
+        <com.google.android.material.card.MaterialCardView
+            style="@style/Widget.Material3.CardView.Outlined"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:cardBackgroundColor="@color/surface" app:cardCornerRadius="16dp"
+            app:strokeColor="@color/card_stroke" app:strokeWidth="1dp">
+            <LinearLayout
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:padding="12dp">
+                <LinearLayout
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="● Pemasukan" android:textColor="@color/status_lunas"
+                        android:textSize="12sp"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp" android:text="● Pengeluaran"
+                        android:textColor="@color/status_nunggak" android:textSize="12sp"/>
+                </LinearLayout>
+                <com.app.kasbareng.ui.reports.CashChartView
+                    android:id="@+id/chart_bars"
+                    android:layout_width="match_parent" android:layout_height="200dp"
+                    android:layout_marginTop="4dp"/>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Tren saldo -->
+        <TextView style="@style/Section" android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:layout_marginTop="24dp"
+            android:text="TREN SALDO KAS"/>
+        <com.google.android.material.card.MaterialCardView
+            style="@style/Widget.Material3.CardView.Outlined"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:cardBackgroundColor="@color/surface" app:cardCornerRadius="16dp"
+            app:strokeColor="@color/card_stroke" app:strokeWidth="1dp">
+            <com.app.kasbareng.ui.reports.CashChartView
+                android:id="@+id/chart_line"
+                android:layout_width="match_parent" android:layout_height="180dp"
+                android:layout_margin="12dp"/>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Status anggota -->
+        <TextView style="@style/Section" android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:layout_marginTop="24dp"
+            android:text="STATUS ANGGOTA"/>
+        <com.google.android.material.card.MaterialCardView
+            style="@style/Widget.Material3.CardView.Outlined"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:cardBackgroundColor="@color/surface" app:cardCornerRadius="16dp"
+            app:strokeColor="@color/card_stroke" app:strokeWidth="1dp">
+            <LinearLayout
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:padding="16dp">
+                <TextView android:id="@+id/seg_summary"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:textColor="@color/text_primary" android:textSize="15sp"/>
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/seg_card"
+                    style="@style/Widget.Material3.CardView.Filled"
+                    android:layout_width="match_parent" android:layout_height="12dp"
+                    android:layout_marginTop="12dp"
+                    app:cardBackgroundColor="@color/surface_high"
+                    app:cardCornerRadius="6dp" app:cardElevation="0dp">
+                    <LinearLayout
+                        android:layout_width="match_parent" android:layout_height="match_parent"
+                        android:orientation="horizontal">
+                        <View android:id="@+id/seg_lunas" android:layout_width="0dp"
+                            android:layout_height="match_parent" android:layout_weight="0"
+                            android:background="@color/status_lunas"/>
+                        <View android:id="@+id/seg_running" android:layout_width="0dp"
+                            android:layout_height="match_parent" android:layout_weight="0"
+                            android:background="@color/status_netral"/>
+                        <View android:id="@+id/seg_overdue" android:layout_width="0dp"
+                            android:layout_height="match_parent" android:layout_weight="0"
+                            android:background="@color/status_nunggak"/>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+                <TextView android:id="@+id/seg_legend" style="@style/Label"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"/>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <View android:layout_width="match_parent" android:layout_height="1dp"
+            android:layout_marginTop="24dp" android:layout_marginBottom="20dp"
+            android:background="@color/card_stroke"/>
+
+        <TextView android:id="@+id/rp_overdue_title" style="@style/Label"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+        <TextView android:id="@+id/rp_overdue_list"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="6dp" android:lineSpacingExtra="4dp"
+            android:textColor="@color/text_primary" android:textSize="15sp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_share"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="24dp" android:text="Bagikan laporan"/>
+    </LinearLayout>
+</ScrollView>

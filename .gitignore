@@ -1,0 +1,38 @@
+# Build artifacts
+/app/build/
+/app/.cxx/
+/app/.externalNativeBuild/
+
+# Local configuration files
+/.platform/
+/local.properties
+/app/release.apk
+/app/debug.apk
+
+# Dependencies
+# CodeAssist often manages these locally within .platform,
+# but if any are declared explicitly outside of app/build
+# and are generated, they should be ignored.
+# For now, we assume .platform covers most of this.
+
+# Android Studio / IDE specific files (if applicable, though CodeAssist specific files are in .platform)
+.gradle/
+.idea/
+*.iml
+.DS_Store
+
+# Crashlytics or other service API keys (if present)
+# Example: If you have a file like google-services.json which may contain keys,
+# ensure it's handled carefully. For now, assume keys are managed in build.gradle
+# or through environment variables, but if a dedicated file appears, it should be added.
+
+# Environment files
+.env
+.env.*
+build/
+.platform/
+local.properties
+*.apk
+*.aab
+*.jks
+*.keystore
